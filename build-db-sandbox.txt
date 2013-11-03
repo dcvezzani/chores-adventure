@@ -1,0 +1,68 @@
+%w{Dad:9/19/1972 Mom:2/28/1977}.each do |parent|
+name, birthdate = parent.split(/:/)
+Parent.create!(name: name, birthdate: Time.strptime(birthdate, "%m/%d/%Y"))
+end
+
+%w{Tim:6/16/1997 Jordan:11/13/1998 Adelle:1/4/2001 Matthew:11/21/2003 Rebekah:4/13/2006 Cassandra:6/25/2009}.each do |child|
+name, birthdate = child.split(/:/)
+Child.create!(name: name, birthdate: Time.strptime(birthdate, "%m/%d/%Y"))
+end
+
+FamilyMember.count
+
+
+needs_raw = <<-EOL
+main level bathroom
+den
+kitchen
+dining room
+home school room
+EOL
+needs = needs_raw.split(/[\r\n]+/)
+
+needs.each do |need|
+  Need.create!(title: need)
+end
+
+
+rewards_raw = <<-EOL
+Disneyland
+bike ride and picnic
+trip to Yosemite
+icecream at 31 flavors
+Beatles Rock Band
+EOL
+rewards = rewards_raw.split(/[\r\n]+/)
+
+rewards.each do |reward|
+  Reward.create!(title: reward)
+end
+
+
+needs = Need.all
+needs[2].votes
+needs[2].votes_weight
+
+dad = Parent.where{name == "Dad"}.first
+tim = Child.where{name == "Tim"}.first
+jordan = Child.where{name == "Jordan"}.first
+adelle = Child.where{name == "Adelle"}.first
+needs[2].vote(:up, dad)
+needs[2].vote(:up, tim)
+needs[2].vote(:up, jordan)
+needs[2].vote(:down, adelle)
+rewards = Reward.all
+
+
+assignment = Assignment.new
+assignment.needs << Need.all[2]
+assignment.rewards << Reward.all.slice(1,3)
+assignment.owner = tim
+assignment.family_members = [jordan, adelle]
+assignment.save!
+
+# assignment = Assignment.first
+# assignment.owner = tim.becomes(FamilyMember)
+# assignment.family_members = [jordan, adelle].map{|x| x.becomes(FamilyMember)}
+# assignment.save!
+

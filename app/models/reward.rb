@@ -11,7 +11,8 @@ class Reward < ActiveRecord::Base
   end
 
   def votes_weight
-    RewardVote.where{item_id == 3}.select{sum(weight)}.to_a.first.attributes["sum"]
+    the_votes = RewardVote.where{item_id == 3}.select{sum(weight)}.to_a.first.attributes["sum"]
+    (the_votes.blank?) ? 0 : the_votes.first.attributes["sum"].to_i
   end
 
 end
