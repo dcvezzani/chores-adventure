@@ -1,0 +1,17 @@
+      # a dropdown menu triggered off of a hyperlink
+
+      <div class="dropdown" style="display: none; ">
+      <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+      Actions
+      <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu with-icon-and-text" role="menu" aria-labelledby="dLabel">
+
+        <li><i class="icon-search"></i><%= link_to 'Show', client_message %></li>
+        <li><i class="icon-pencil"></i><%= link_to 'Edit', edit_client_message_path(client_message) %></li>
+        <li><i class="icon-trash"></i><%= link_to 'Destroy', client_message, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+      </div>
+
+
+

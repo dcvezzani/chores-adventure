@@ -1,0 +1,33 @@
+git init
+git add .
+git commit -m "init"
+
+# manage ssh keys used for different heroku accounts
+heroku accounts
+heroku accounts:set personal
+
+# initialize heroku
+heroku create --stack cedar
+
+# heroku dns name
+# http://fast-journey-5000.herokuapp.com/ | git@heroku.com:fast-journey-5000.git
+
+# deploy initial project to heroku
+git push heroku master
+heroku ps
+heroku logs
+
+# heroku ignores config/database.yml completely
+# we still want to check to make sure everything goes well
+heroku run rake db:migrate
+
+# launch the app in your web browser
+heroku open
+
+# register domains after setting the dns settings records on the host (e.g., GoDaddy)
+heroku domains
+# heroku domains:add track.reliacode.com
+
+# add environment variables, if required
+# heroku config:add GMAIL_USERNAME=asdf
+# heroku config:add GMAIL_PASSWORD=asdf

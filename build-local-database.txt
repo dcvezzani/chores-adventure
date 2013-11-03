@@ -1,0 +1,61 @@
+# log in as super user
+psql -d postgres -U davidvezzani
+
+# create user and database
+create user ucmeridm_admin with password 'pass13!#';
+CREATE DATABASE ucmeridm_development OWNER ucmeridm_admin;
+GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin; 
+\c ucmeridm_development
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO ucmeridm_admin; 
+\c ucmeridm_development
+CREATE SCHEMA service;
+GRANT ALL ON SCHEMA service TO ucmeridm_admin; 
+#DROP SCHEMA service;
+
+# create unit test user and database
+create user ucmeridm_admin_uts with password 'pass13!#';
+GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin_uts; 
+\c ucmeridm_development
+CREATE SCHEMA ucmeridm_admin_uts;
+GRANT ALL ON SCHEMA ucmeridm_admin_uts TO ucmeridm_admin_uts; 
+\c ucmeridm_development
+psql -d ucmeridm_development -U ucmeridm_admin_uts
+
+# create int test user and database
+create user ucmeridm_admin_int with password 'pass13!#';
+GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin_int; 
+\c ucmeridm_development
+CREATE SCHEMA ucmeridm_admin_int;
+GRANT ALL ON SCHEMA ucmeridm_admin_int TO ucmeridm_admin_int; 
+\c ucmeridm_development
+psql -d ucmeridm_development -U ucmeridm_admin_int
+
+
+# create test user and test database that can run with rspec tests
+CREATE USER rails with SUPERUSER CREATEDB password 'rails.pass13!#';
+CREATE DATABASE ucmeridm_test OWNER rails;
+GRANT ALL ON DATABASE ucmeridm_test TO rails; 
+\c ucmeridm_development
+CREATE SCHEMA service;
+GRANT ALL ON SCHEMA service TO ucmeridm_admin; 
+#DROP SCHEMA service;
+
+# from command line
+# createuser -s rails -U davidvezzani
+createdb -O rails ucmeridm_test -U davidvezzani
+createuser ucmeridm_admin -U davidvezzani
+# createdb -O ucmeridm_admin ucmeridm_test -U davidvezzani
+createdb -O ucmeridm_admin ucmeridm_development -U davidvezzani
+
+# update config/database.yml
+# -e renders newlines (\n)
+# '!' escapes the history (!) character
+echo -e "development:\n  adapter: postgresql\n  database: ucmeridm_development\n  username: ucmeridm_admin\n  password: pass13"'!'"#\n  encoding: utf8\n  pool: 5\n \ntest: \n  adapter: postgresql\n  database: ucmeridm_test\n  username: rails\n  password: rails.pass13"'!'"#\n  encoding: utf8\n  pool: 5" > config/database.yml
+
+mkdir db/migrate
+bundle install --binstubs
+
+./bin/rails g cancan:ability
+./bin/rake db:migrate db:migrate:status
+

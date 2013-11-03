@@ -1,0 +1,48 @@
+# open local web server home page in browser
+echo -e "open http://localhost:3696" > open.sh
+chmod 755 open.sh
+
+# start the web server
+echo -e "#GMAIL_USERNAME=asdf GMAIL_PASSWORD=asdf RAILS_ENV=development bundle exec rails s -p 3696\nRAILS_ENV=development bundle exec rails s -p 3696" > start.sh
+chmod 755 start.sh
+
+# Procfile (to go with 'thin' server)
+echo -e "web: bundle exec rails server thin -p \$PORT -e \$RACK_ENV\n#worker:  bundle exec rake jobs:work" > Procfile
+chmod 644 Procfile
+
+# Watchr files
+echo -e "def run_spec(file)\n  unless File.exist?(file)\n    puts \"#{file} does not exist\"\n    return\n  end\n\n  puts \"Running #{file}\"\n  system \"bundle exec rspec #{file}\"\n  puts\nend\n\nwatch(\"spec/.*/*_spec.rb\") do |match|\n  run_spec match[0]\nend\n\nwatch(\"app/(.*/.*).rb\") do |match|\n  run_spec  %{spec/#{match[1]}_spec.rb}\nend\n" > .watchr
+
+echo -e "desc \"Run watchr\"\ntask :watchr do\n  sh %{bundle exec watchr .watchr}\nend\n" > lib/tasks/watchr.rake
+
+echo -e "bundle exec rake watchr" > watcher.sh
+chmod 755 watcher.sh
+
+
+# put this in config/environments/development.rb
+
+  # put this in config/environments/production.rb
+  # config.action_mailer.default_url_options = { :host => 'castletonlawfirm.com' }
+  # config.action_mailer.perform_deliveries = false
+  # END
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3696' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.perform_deliveries = false # comment this line out to enable email deliveries
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    #:port => 25,
+    :port => 587,
+    :domain => config.action_mailer.default_url_options[:host], 
+    #:authentication => :login,
+    :authentication => :plain,
+    :user_name => ENV["GMAIL_USERNAME"],
+    :password => ENV["GMAIL_PASSWORD"],
+    :enable_starttls_auto => true, 
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+  }
+
