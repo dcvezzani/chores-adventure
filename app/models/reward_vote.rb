@@ -1,0 +1,2 @@
+class RewardVote < Vote
+end

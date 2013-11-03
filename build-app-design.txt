@@ -1,5 +1,26 @@
-# ===== Tue Jul  9 09:49:19 PDT 2013
+# ===== Sat Nov  2 17:14:03 PDT 2013
 
+./bin/rails g model Need title:string description:text
+./bin/rails g model Reward title:string description:text
+./bin/rails g model FamilyMember name:string birthdate:date
+./bin/rails g model Parent name:string birthdate:date
+./bin/rails g model Child name:string birthdate:date
+
+./bin/rails g model Note content:text author:references item:references type:string
+./bin/rails g model NeedNote content:text author:references item:references type:string
+./bin/rails g model RewardNote content:text author:references item:references type:string
+
+./bin/rails g model Vote weight:integer author:references item:references type:string
+./bin/rails g model NeedVote weight:integer author:references item:references type:string
+./bin/rails g model RewardVote weight:integer author:references item:references type:string
+
+./bin/rails g model Chore assigned_at:datetime completed_at:datetime due_at:datetime
+./bin/rails g model Assignment chore:references family_member:references
+./bin/rails g migration remove_family_member_id_from_assignments family_member:references
+
+./bin/rails g model AssignmentFamilyMember assignment:references family_member:references
+./bin/rails g model ChoreNeed chore:references need:references
+./bin/rails g model ChoreReward chore:references reward:references
 
 
 # ===== Sat Jul  6 05:24:59 PDT 2013

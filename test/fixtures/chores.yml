@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  assigned_at: 2013-11-02 17:30:16
+  completed_at: 2013-11-02 17:30:16
+  due_at: 2013-11-02 17:30:16
+
+two:
+  assigned_at: 2013-11-02 17:30:16
+  completed_at: 2013-11-02 17:30:16
+  due_at: 2013-11-02 17:30:16

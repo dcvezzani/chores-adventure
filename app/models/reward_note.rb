@@ -1,0 +1,2 @@
+class RewardNote < Note
+end

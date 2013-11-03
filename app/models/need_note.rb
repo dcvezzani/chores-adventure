@@ -1,0 +1,2 @@
+class NeedNote < Note
+end

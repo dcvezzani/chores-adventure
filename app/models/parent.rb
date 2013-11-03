@@ -1,0 +1,2 @@
+class Parent < FamilyMember
+end

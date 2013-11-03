@@ -2,56 +2,56 @@
 psql -d postgres -U davidvezzani
 
 # create user and database
-create user ucmeridm_admin with password 'pass13!#';
-CREATE DATABASE ucmeridm_development OWNER ucmeridm_admin;
-GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin; 
-\c ucmeridm_development
+create user chor_admin with password 'pass13!#';
+CREATE DATABASE chor_development OWNER chor_admin;
+GRANT ALL ON DATABASE chor_development TO chor_admin; 
+\c chor_development
 CREATE SCHEMA public;
-GRANT ALL ON SCHEMA public TO ucmeridm_admin; 
-\c ucmeridm_development
+GRANT ALL ON SCHEMA public TO chor_admin; 
+\c chor_development
 CREATE SCHEMA service;
-GRANT ALL ON SCHEMA service TO ucmeridm_admin; 
+GRANT ALL ON SCHEMA service TO chor_admin; 
 #DROP SCHEMA service;
 
 # create unit test user and database
-create user ucmeridm_admin_uts with password 'pass13!#';
-GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin_uts; 
-\c ucmeridm_development
-CREATE SCHEMA ucmeridm_admin_uts;
-GRANT ALL ON SCHEMA ucmeridm_admin_uts TO ucmeridm_admin_uts; 
-\c ucmeridm_development
-psql -d ucmeridm_development -U ucmeridm_admin_uts
+create user chor_admin_uts with password 'pass13!#';
+GRANT ALL ON DATABASE chor_development TO chor_admin_uts; 
+\c chor_development
+CREATE SCHEMA chor_admin_uts;
+GRANT ALL ON SCHEMA chor_admin_uts TO chor_admin_uts; 
+\c chor_development
+psql -d chor_development -U chor_admin_uts
 
 # create int test user and database
-create user ucmeridm_admin_int with password 'pass13!#';
-GRANT ALL ON DATABASE ucmeridm_development TO ucmeridm_admin_int; 
-\c ucmeridm_development
-CREATE SCHEMA ucmeridm_admin_int;
-GRANT ALL ON SCHEMA ucmeridm_admin_int TO ucmeridm_admin_int; 
-\c ucmeridm_development
-psql -d ucmeridm_development -U ucmeridm_admin_int
+create user chor_admin_int with password 'pass13!#';
+GRANT ALL ON DATABASE chor_development TO chor_admin_int; 
+\c chor_development
+CREATE SCHEMA chor_admin_int;
+GRANT ALL ON SCHEMA chor_admin_int TO chor_admin_int; 
+\c chor_development
+psql -d chor_development -U chor_admin_int
 
 
 # create test user and test database that can run with rspec tests
 CREATE USER rails with SUPERUSER CREATEDB password 'rails.pass13!#';
-CREATE DATABASE ucmeridm_test OWNER rails;
-GRANT ALL ON DATABASE ucmeridm_test TO rails; 
-\c ucmeridm_development
+CREATE DATABASE chor_test OWNER rails;
+GRANT ALL ON DATABASE chor_test TO rails; 
+\c chor_development
 CREATE SCHEMA service;
-GRANT ALL ON SCHEMA service TO ucmeridm_admin; 
+GRANT ALL ON SCHEMA service TO chor_admin; 
 #DROP SCHEMA service;
 
 # from command line
 # createuser -s rails -U davidvezzani
-createdb -O rails ucmeridm_test -U davidvezzani
-createuser ucmeridm_admin -U davidvezzani
-# createdb -O ucmeridm_admin ucmeridm_test -U davidvezzani
-createdb -O ucmeridm_admin ucmeridm_development -U davidvezzani
+createdb -O rails chor_test -U davidvezzani
+createuser chor_admin -U davidvezzani
+# createdb -O chor_admin chor_test -U davidvezzani
+createdb -O chor_admin chor_development -U davidvezzani
 
 # update config/database.yml
 # -e renders newlines (\n)
 # '!' escapes the history (!) character
-echo -e "development:\n  adapter: postgresql\n  database: ucmeridm_development\n  username: ucmeridm_admin\n  password: pass13"'!'"#\n  encoding: utf8\n  pool: 5\n \ntest: \n  adapter: postgresql\n  database: ucmeridm_test\n  username: rails\n  password: rails.pass13"'!'"#\n  encoding: utf8\n  pool: 5" > config/database.yml
+echo -e "development:\n  adapter: postgresql\n  database: chor_development\n  username: chor_admin\n  password: pass13"'!'"#\n  encoding: utf8\n  pool: 5\n \ntest: \n  adapter: postgresql\n  database: chor_test\n  username: rails\n  password: rails.pass13"'!'"#\n  encoding: utf8\n  pool: 5" > config/database.yml
 
 mkdir db/migrate
 bundle install --binstubs
