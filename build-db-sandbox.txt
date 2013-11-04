@@ -61,7 +61,7 @@ assignment.owner = tim
 assignment.family_members = [jordan, adelle]
 assignment.save!
 
-# assignment = Assignment.first
+assignment = Assignment.first
 # assignment.owner = tim.becomes(FamilyMember)
 # assignment.family_members = [jordan, adelle].map{|x| x.becomes(FamilyMember)}
 # assignment.save!
