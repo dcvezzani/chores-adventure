@@ -11,8 +11,8 @@ class Need < ActiveRecord::Base
   end
 
   def votes_weight
-    need_votes = NeedVote.where{item_id == 3}.select{sum(weight)}.to_a
-    (need_votes.blank?) ? 0 : need_votes.first.attributes["sum"].to_i
+    the_votes = NeedVote.where{item_id == 3}.select{sum(weight)}.to_a
+    (the_votes.blank?) ? 0 : the_votes.first.attributes["sum"].to_i
   end
 
 end

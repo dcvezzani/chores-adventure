@@ -1,4 +1,10 @@
 Chores::Application.routes.draw do
+  resources :family_members
+
+  resources :rewards
+
+  resources :needs
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

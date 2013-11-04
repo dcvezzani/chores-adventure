@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
+//= require modernizr-latest
 //= require_tree .
+//
+
+// THIS MUST GO LAST
+//= require ../jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min
+
+
+$(document).foundation();

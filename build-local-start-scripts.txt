@@ -3,7 +3,7 @@ echo -e "open http://localhost:3696" > open.sh
 chmod 755 open.sh
 
 # start the web server
-echo -e "#GMAIL_USERNAME=asdf GMAIL_PASSWORD=asdf RAILS_ENV=development bundle exec rails s -p 3696\nRAILS_ENV=development bundle exec rails s -p 3696" > start.sh
+echo -e "#GMAIL_USERNAME=asdf GMAIL_PASSWORD=asdf RAILS_ENV=development bundle exec rails s -p 3696\nRAILS_ENV=development bundle exec rails s thin -p 3696" > start.sh
 chmod 755 start.sh
 
 # Procfile (to go with 'thin' server)

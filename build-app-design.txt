@@ -1,3 +1,29 @@
+# ===== Sun Nov  3 13:13:16 PST 2013
+
+./bin/rails g scaffold Need title:string description:text
+./bin/rails g scaffold Reward title:string description:text
+./bin/rails g scaffold FamilyMember name:string birthdate:date
+
+
+20131103001640: db/migrate/20131103001640_create_needs.rb
+20131103001643: db/migrate/20131103001643_create_rewards.rb
+20131103002857: db/migrate/20131103002857_create_family_members.rb
+20131103002904: db/migrate/20131103002904_create_notes.rb
+20131103002943: db/migrate/20131103002943_create_votes.rb
+20131103003019: db/migrate/20131103003019_create_assignments.rb
+20131103050329: db/migrate/20131103050329_remove_family_member_id_from_assignments.rb
+20131103050454: db/migrate/20131103050454_create_assignment_family_members.rb
+20131103130931: db/migrate/20131103130931_create_assignment_needs.rb
+20131103130935: db/migrate/20131103130935_create_assignment_rewards.rb
+20131103131529: db/migrate/20131103131529_remove_chore_id_from_assignments.rb
+20131103131855: db/migrate/20131103131855_add_assigned_at_to_assignments.rb
+20131103131859: db/migrate/20131103131859_add_completed_at_to_assignments.rb
+20131103131903: db/migrate/20131103131903_add_due_at_to_assignments.rb
+20131103132650: db/migrate/20131103132650_add_owner_id_to_assignments.rb
+20131103134609: db/migrate/20131103134609_add_type_to_family_members.rb
+ => nil 
+
+
 # ===== Sat Nov  2 17:14:03 PDT 2013
 
 ./bin/rails g model Need title:string description:text
@@ -5,6 +31,7 @@
 ./bin/rails g model FamilyMember name:string birthdate:date
 ./bin/rails g model Parent name:string birthdate:date
 ./bin/rails g model Child name:string birthdate:date
+./bin/rails g migration add_type_to_family_members type:string
 
 ./bin/rails g model Note content:text author:references item:references type:string
 ./bin/rails g model NeedNote content:text author:references item:references type:string
@@ -25,6 +52,8 @@
 ./bin/rails g migration add_assigned_at_to_assignments assigned_at:datetime
 ./bin/rails g migration add_completed_at_to_assignments completed_at:datetime
 ./bin/rails g migration add_due_at_to_assignments due_at:datetime
+./bin/rails g migration add_owner_id_to_assignments owner:references
+
 
 ./bin/rails g model AssignmentFamilyMember assignment:references family_member:references
 ./bin/rails g model AssignmentNeed assignment:references need:references
@@ -33,6 +62,7 @@
 
 puts (ActiveRecord::Migrator.migrations "db/migrate").map{|x| "#{x.version}: #{x.filename}"}
 
+ActiveRecord::Migrator.migrate "db/migrate", 0
 ActiveRecord::Migrator.migrate "db/migrate"
 ActiveRecord::Migrator.down "db/migrate", 20131103003015
 ActiveRecord::Migrator.down "db/migrate", 20131103051155

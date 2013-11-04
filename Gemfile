@@ -17,6 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Add Foundation Here
+gem 'compass-rails' # you need this or you get an err
+gem 'zurb-foundation', '~> 4.0.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -39,6 +43,10 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+#
+# Using 'thin' because I'm too lazy to resolve problem with Webbrick
+# http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h
+gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
