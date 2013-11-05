@@ -1,5 +1,7 @@
 Chores::Application.routes.draw do
   resources :family_members
+  resources :parents
+  resources :children
 
   resources :rewards
 

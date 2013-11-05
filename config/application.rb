@@ -21,12 +21,15 @@ module Chores
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-    config.assets.paths %W(#{config.root}/jquery-ui-1.10.3.custom/css/ui-lightness)
+    config.assets.paths %W(#{config.root}/jquery-ui-1.10.3.custom/css/ui-lightness #{config.root}/custom #{config.root}/choco-templates/css #{config.root}/custom)
+    
    
     initializer :after_append_asset_paths, 
                 :group => :all, 
                 :after => :append_assets_path do
        config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "jquery-ui-1.10.3.custom", "css", "ui-lightness").to_s
+       config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "bootstrap-3.0.1", "css").to_s
+       config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "choco-templates", "css").to_s
        #config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "jquery.timepicker", "css").to_s
     end
    

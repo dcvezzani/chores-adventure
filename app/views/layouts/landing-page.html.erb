@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<!-- <meta name="viewport" content="width=device&#45;width, initial&#45;scale=1.0" /> -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css' />
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    
+    <%= csrf_meta_tags %>
+  </head>
+
+<body>
+	<div id="wrapper">
+		
+		<!-- top-nav -->
+		<nav class="top-nav">
+			<div class="shell">
+				<a href="#" class="nav-btn">HOMEPAGE<span></span></a>
+				<span class="top-nav-shadow"></span>
+				<ul>
+					<li class="active"><span><a href="#">home</a></span></li>
+					<li><span><a href="#">services</a></span></li>
+					<li><span><a href="#">projects</a></span></li>
+					<li><span><a href="#">solutions</a></span></li>
+					<li><span><a href="#">jobs</a></span></li>
+					<li><span><a href="#">blog</a></span></li>
+					<li><span><a href="#">contacts</a></span></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- end of top-nav -->
+
+			<!-- header -->
+			<header  id="header">
+				<!-- shell -->
+				<div class="shell">
+					<div class="header-inner">:
+						<!-- header-cnt -->
+						<div class="header-cnt">
+							<h1 id="logo"><a href="#">Simple</a></h1>		
+							<p>
+								<span class="mobile">Keeping the house clean is everyone's job.</span>
+								<span class="desktop">What can you do today to make a difference?  Many hands make light work.  Everybody makes a difference.</span>
+							</p>
+							<a href="#" class="blue-btn">See a need?</a>
+							<a href="#" class="blue-btn">Have a want?</a>
+						</div>
+						<!-- end of header-cnt -->
+						<!-- slider -->
+						<div class="slider-holder">
+							<div class="flexslider">
+								<ul class="slides">
+									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+								
+									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+
+									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+
+									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+
+									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+								</ul>
+							</div>
+						</div>
+						<!-- end of slider -->
+						<div class="cl">&nbsp;</div>
+					</div>
+					<div class="cl">&nbsp;</div>
+				</div>
+				<!-- end of shell -->	
+			</header>
+			<!-- end of header -->
+
+			<!-- main -->
+			<div class="main">
+				<span class="shadow-top"></span>
+				<!-- shell -->
+				<div class="shell">
+					<div class="container">
+						<!-- testimonial -->
+						<section class="testimonial">
+							<h2>Thank you!!</h2>
+							<p><strong>“</strong>The bathroom really stunk yesterday.  When I went in today, I felt like I was walking in a rose garden.  Thanks for a job well done, Timothy!"</span></p>
+						</section>
+						<!-- testimonial -->
+
+						<section class="blog">
+							<!-- content -->
+							<div class="content">
+								<img src="/assets/images/i-img.png" alt=""  class="alignleft"/>
+								<div class="cnt">
+									<h3>We Guarantee Commitment &amp; Quality</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie condimentum consequat. Nam leo libero, scelerisque tincidunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque. Praesent purus eros, egestas eu temp</p>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+										<li><a href="#">Cras molestie condimentum consequat. </a></li>
+										<li><a href="#">Nam leo libero, scelerisque tincidunt commodo id</a></li>
+										<li><a href="#">Dae molestie condimentum consequat dolor</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- end of content -->
+
+							<!-- sidebar -->
+							<aside class="sidebar">
+								<!-- widget -->
+								<div class="widget">
+									<h3>Latest Blog Posts</h3>
+									<ul>
+										<li>
+											<div class="img-holder">
+												<a href="#"><img src="/assets/images/post-img.png" alt="" /></a>
+											</div>
+											
+											<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> </a><span>02.02.2012</span></a> </p>
+										</li>
+										<li>
+											<div class="img-holder">
+												<a href="#"><img src="/assets/images/post-img2.png" alt="" /></a>
+											</div>
+											<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> </a><span>01.02.2012</span></a> </p>
+										</li>
+										<li>
+											<div class="img-holder">
+												<a href="#"><img src="/assets/images/post-img3.png" alt="" /></a>
+											</div>
+											<p>
+											<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> 
+											<span>30.01.2012</span></a></p>
+										</li>
+									</ul>
+									<div class="cl">&nbsp;</div>
+								</div>
+									<a href="#" class="view">View All</a>
+								<!-- end of widget -->
+							</aside>
+							<!-- end of sidebar -->
+							<div class="cl">&nbsp;</div>
+						</section>	
+				  	<!-- end of blog -->
+						
+						<!-- cols -->
+						<section class="cols">
+							<div class="col">
+								<h3>Tableless Construction</h3>
+								<img src="/assets/images/cols-img.png" alt="" class="alignleft"/>
+								<div class="col-cnt">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie condimentum conse am leo libero, samet dor.</p>
+								</div>
+								<a href="#" class="view">View More</a>
+							</div>
+							<div class="col">
+								<h3>We’re Hiring</h3>
+								<img src="/assets/images/cols-img2.png" alt="" class="alignleft"/>
+								<div class="col-cnt">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie condimentum conse am leo libero, samet dor.</p>
+								</div>
+								<a href="#" class="view">View More</a>
+							</div>
+							<div class="col">
+								<h3>Our Partners</h3>
+								<img src="/assets/images/cols-img3.png" alt="" class="alignleft"/>
+								<div class="col-cnt">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie condimentum conse am leo libero, samet dor.</p>
+								</div>
+								<a href="#" class="view">View More</a>
+							</div>
+							<div class="cl">&nbsp;</div>
+						</section>
+						<!-- end of cols -->
+					</div>
+				<!-- end of shell -->
+				</div>
+				<!-- end of container -->
+			</div>
+			<!-- end of main -->
+		</div>	
+		<!-- footer-push -->
+		<div id="footer-push"></div>
+		<!-- end of footer-push -->
+	
+	<!-- end of wrapper -->
+	<!-- footer -->
+	<div  id="footer">
+		<span class="shadow-bottom"></span>
+		<!-- footer-cols -->
+		<div class="footer-cols" style="display: none; ">
+			<!-- shell -->
+			<div class="shell">
+				<div class="col">
+					<h3><a href="#">Solutions</a></h3>
+					<div class="col-cnt">
+						<ul>
+							<li><a href="#">Lorem lipsum dolor </a></li>
+							<li><a href="#">Ame tleo libero dolor</a></li>
+							<li><a href="#">Aidpispicing lipsum </a></li>
+							<li><a href="#">Commodo id amet </a></li>
+							<li><a href="#">Sectetur amet au car </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<h3><a href="#">Services</a></h3>
+					<div class="col-cnt">
+						<ul>
+							<li><a href="#">Lorem lipsum dolor </a></li>
+							<li><a href="#">Ame tleo libero dolor</a></li>
+							<li><a href="#">Aidpispicing lipsum </a></li>
+							<li><a href="#">Commodo id amet </a></li>
+							<li><a href="#">Sectetur amet au car </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<h3><a href="#">Portfolio</a></h3>
+					<div class="col-cnt">
+						<ul>
+							<li><a href="#">Lorem lipsum dolor </a></li>
+							<li><a href="#">Ame tleo libero dolor</a></li>
+							<li><a href="#">Aidpispicing lipsum </a></li>
+							<li><a href="#">Commodo id amet </a></li>
+							<li><a href="#">Sectetur amet au car </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<h3><a href="#">Contact Us</a></h3>
+					<div class="col-cnt">
+						<p><strong>Email:</strong> <a href="#">info@yourwebsitename.com</a></p>
+						<p><strong>Phone:</strong> 655-606-111</p>
+						<p><strong>Adress:</strong> East Pixel Bld. 99, Creative City 9000,Republic of Design Email:</p>	
+					</div>
+				</div>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- end of shell -->
+		</div>
+		<!-- end of footer-cols -->
+		<div class="footer-bottom">
+			<div class="shell">
+				<nav class="footer-nav">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Projects</a></li>
+						<li><a href="#">Solutions</a></li>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contacts</a></li>
+					</ul>
+					<div class="cl">&nbsp;</div>
+				</nav>
+				<p class="copy">&copy; Copyright 2012<span>|</span>Sitename. Design by <a href="http://chocotemplates.com" target"_blank">ChocoTemplates.com</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- end of footer -->
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $( ".date-selectable" ).datepicker({dateFormat: "yy-mm-dd"});
+  });
+</script>
+

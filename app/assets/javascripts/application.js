@@ -12,14 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+// require foundation
 //= require turbolinks
-//= require modernizr-latest
+// require modernizr-latest
 //= require_tree .
 //
 
 // THIS MUST GO LAST
 //= require ../jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min
+//= require ../bootstrap-3.0.1/js/bootstrap
+//= require ../choco-templates/js/jquery.flexslider-min
+// require ../choco-templates/js/modernizr.custom
+//= require ../choco-templates/js/functions
 
 
-$(document).foundation();
+//$(document).foundation();

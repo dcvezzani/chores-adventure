@@ -1,4 +1,4 @@
-<%= default_form_for(@family_member) do |f| %>
+<%= default_form_for(@family_member.becomes(FamilyMember)) do |f| %>
   <% if @family_member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@family_member.errors.count, "error") %> prohibited this family_member from being saved:</h2>
@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="form-group field">
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :birthdate %><br>
+  <div class="form-group field">
+    <%= f.label :birthdate %>
     <%= f.date_select :birthdate %>
   </div>
-  <div class="actions">
+  <div class="form-group actions">
     <%= f.submit %>
   </div>
 <% end %>
