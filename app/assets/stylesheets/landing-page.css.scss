@@ -9,9 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- * require_tree .
- *= require common.css.scss
- *= require welcome.css.scss
+ *= require_tree ./application
+ *= require_tree ./landing-page
 
  * require foundation_and_overrides
  *= require ../jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom

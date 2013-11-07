@@ -33,12 +33,8 @@
 			<div class="shell">
 				<a href="#" class="nav-btn">HOMEPAGE<span></span></a>
 				<span class="top-nav-shadow"></span>
-				<ul>
-					<li class="active"><%= menu_item("home", [:needs]) %></li>
-					<li><%= menu_item("needs", [:needs]) %></li>
-					<li><%= menu_item("rewards", [:rewards]) %></li>
-					<li><%= menu_item("family members", [:family_members]) %></li>
-				</ul>
+
+        <%= render partial: "shared/top_nav" %>
 			</div>
 		</nav>
 		<!-- end of top-nav -->

@@ -15,8 +15,8 @@
 // require foundation
 //= require turbolinks
 // require modernizr-latest
-// require_tree .
-//= require welcome.js.coffee
+//= require_tree ./application
+//= require_tree ./landing-page
 //
 
 // THIS MUST GO LAST

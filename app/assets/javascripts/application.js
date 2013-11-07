@@ -15,10 +15,7 @@
 // require foundation
 //= require turbolinks
 // require modernizr-latest
-// require_tree .
-//= require family_members.js.coffee
-//= require needs.js.coffee
-//= require rewards.js.coffee
+//= require_tree ./application
 //
 
 // THIS MUST GO LAST
