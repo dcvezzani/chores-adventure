@@ -22,7 +22,6 @@ module Chores
     # config.i18n.default_locale = :de
     
     config.assets.paths %W(#{config.root}/jquery-ui-1.10.3.custom/css/ui-lightness #{config.root}/custom #{config.root}/choco-templates/css #{config.root}/custom)
-    
    
     initializer :after_append_asset_paths, 
                 :group => :all, 

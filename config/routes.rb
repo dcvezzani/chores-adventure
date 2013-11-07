@@ -1,4 +1,5 @@
 Chores::Application.routes.draw do
+  get "welcome/index"
   resources :family_members
   resources :parents
   resources :children

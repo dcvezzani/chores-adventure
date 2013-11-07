@@ -16,14 +16,12 @@
 //= require turbolinks
 // require modernizr-latest
 // require_tree .
-//= require family_members.js.coffee
-//= require needs.js.coffee
-//= require rewards.js.coffee
+//= require welcome.js.coffee
 //
 
 // THIS MUST GO LAST
 //= require ../jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min
-//= require ../bootstrap-3.0.1/js/bootstrap
+// require ../bootstrap-3.0.1/js/bootstrap
 //= require ../choco-templates/js/jquery.flexslider-min
 // require ../choco-templates/js/modernizr.custom
 //= require ../choco-templates/js/functions

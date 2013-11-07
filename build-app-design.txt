@@ -1,3 +1,8 @@
+# ===== Wed Nov  6 21:32:07 PST 2013
+
+./bin/rails g controller Welcome index
+
+
 # ===== Sun Nov  3 13:13:16 PST 2013
 
 ./bin/rails g scaffold Need title:string description:text

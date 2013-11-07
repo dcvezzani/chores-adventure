@@ -11,13 +11,11 @@
  *= require_self
  * require_tree .
  *= require common.css.scss
- *= require family_members.css.scss
- *= require needs.css.scss
- *= require rewards.css.scss
+ *= require welcome.css.scss
 
  * require foundation_and_overrides
  *= require ../jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom
- *= require ../bootstrap-3.0.1/css/bootstrap
+ * require ../bootstrap-3.0.1/css/bootstrap
  *= require ../choco-templates/css/style
  *= require ../choco-templates/css/flexslider
 */
