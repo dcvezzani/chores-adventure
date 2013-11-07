@@ -7,4 +7,10 @@ module ApplicationHelper
     
     form_for(record, options, &block)
   end
+
+  def menu_item(label, href)
+    content_tag(:span) do
+      link_to(label, href)
+    end
+  end
 end

@@ -34,13 +34,10 @@
 				<a href="#" class="nav-btn">HOMEPAGE<span></span></a>
 				<span class="top-nav-shadow"></span>
 				<ul>
-					<li class="active"><span><a href="#">home</a></span></li>
-					<li><span><a href="#">services</a></span></li>
-					<li><span><a href="#">projects</a></span></li>
-					<li><span><a href="#">solutions</a></span></li>
-					<li><span><a href="#">jobs</a></span></li>
-					<li><span><a href="#">blog</a></span></li>
-					<li><span><a href="#">contacts</a></span></li>
+					<li class="active"><%= menu_item("home", [:needs]) %></li>
+					<li><%= menu_item("needs", [:needs]) %></li>
+					<li><%= menu_item("rewards", [:rewards]) %></li>
+					<li><%= menu_item("family members", [:family_members]) %></li>
 				</ul>
 			</div>
 		</nav>
