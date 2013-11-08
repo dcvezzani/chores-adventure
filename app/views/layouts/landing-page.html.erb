@@ -17,10 +17,10 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-    <%= stylesheet_link_tag    "landing-page", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "landing-page", media: "all" %>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css' />
 
-    <%= javascript_include_tag "landing-page", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "landing-page" %>
     
     <%= csrf_meta_tags %>
   </head>
@@ -51,8 +51,7 @@
 								<span class="mobile">Keeping the house clean is everyone's job.</span>
 								<span class="desktop">What can you do today to make a difference?  Many hands make light work.  Everybody makes a difference.</span>
 							</p>
-							<a href="#" class="blue-btn">See a need?</a>
-							<a href="#" class="blue-btn">Have a want?</a>
+              <%= link_to "See a need?", [:new, :need], class: "blue-btn" %>
 						</div>
 						<!-- end of header-cnt -->
 						<!-- slider -->

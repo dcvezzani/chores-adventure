@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // require foundation
-//= require turbolinks
+// require turbolinks
 // require modernizr-latest
 //= require_tree ./application
 //= require_tree ./landing-page

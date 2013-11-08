@@ -8,7 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree ./application
 
  * require foundation_and_overrides
@@ -16,4 +15,21 @@
  *= require ../bootstrap-3.0.1/css/bootstrap
  *= require ../choco-templates/css/style
  *= require ../choco-templates/css/flexslider
+
+ *= require_self
 */
+
+      html { margin-top: -10px; }
+
+      *, *:before, *:after {
+        -moz-box-sizing: inherit;
+      }
+
+      .main { padding-top: 0 !important; margin-top: 0; }
+
+      @media only screen and ( max-width: 767px) { 
+      html { margin-top: 0px; }
+      .main span.shadow-top{ display: none; }
+      .main .main-content{ padding-top: 0px; }
+      }
+
