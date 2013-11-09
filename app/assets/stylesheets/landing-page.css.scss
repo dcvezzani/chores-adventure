@@ -20,12 +20,15 @@
  *= require_self
 */
 
-/* adds a little more padding between the action button and the testimonial section */
+/* 
+adds a little more padding between the action button and the testimonial section 
+also include some extra breathing room at the bottom
+*/
 @media only screen and ( max-width: 767px) { 
   .main .testimonial {
-    padding-left: 0;
-    padding-right: 0;
     padding-top: 70px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 
