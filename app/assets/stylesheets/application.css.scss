@@ -19,17 +19,33 @@
  *= require_self
 */
 
-      html { margin-top: -10px; }
+/*
+removes extra space (usually present when the width is small enough
+to reveal the vertical menu) from the wider, non-landing page views
+*/
+html { margin-top: -10px; }
 
-      *, *:before, *:after {
-        -moz-box-sizing: inherit;
-      }
+/* restore choco-template to retain correct settings for native sections */ 
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+}
 
-      .main { padding-top: 0 !important; margin-top: 0; }
+/*
+Rails generated content should primarily be placed under .main-content
+which is heavily influenced by twitter-bootstrap
+restore bootstrap settings so that Rails specific views are using
+bootstrap correctly
+*/
+.main-content{
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+}
+}
 
-      @media only screen and ( max-width: 767px) { 
-      html { margin-top: 0px; }
-      .main span.shadow-top{ display: none; }
-      .main .main-content{ padding-top: 0px; }
-      }
-
+/* removes extra top space on non-landing page views */
+.main { padding-top: 0 !important; margin-top: 0; }
+@media only screen and ( max-width: 767px) { 
+html { margin-top: 0px; }
+.main span.shadow-top{ display: none; }
+.main .main-content{ padding-top: 0px; }
+}

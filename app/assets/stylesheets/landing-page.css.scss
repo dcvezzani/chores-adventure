@@ -20,11 +20,29 @@
  *= require_self
 */
 
-      @media only screen and ( max-width: 767px) { 
-        .main .testimonial {
-          padding-left: 0;
-          padding-right: 0;
-          padding-top: 70px;
-        }
-      }
+/* adds a little more padding between the action button and the testimonial section */
+@media only screen and ( max-width: 767px) { 
+  .main .testimonial {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+  }
+}
+
+/*
+provides more padding around 'section' elements to provide 
+some breathing space in tight quarters (when the width is narrow), 
+but remove when width is > 980px to allow correct formatting
+
+apparently, this is already being done correctly in the non-
+landing page view templates
+*/
+.container section{
+  padding: 0 15px;
+}
+@media only screen and ( min-width: 980px) { 
+  .container section{
+    padding: inherit;
+  }
+}
 
