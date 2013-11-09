@@ -216,7 +216,7 @@ html, body { height: 100%; }
 	.top-nav a.nav-btn:hover { text-decoration: none; }
 	.top-nav a.nav-btn span { background: url(images/nav-arr@2x.png) no-repeat center 20px; width: 40px; height: 48px; display: block; position: absolute; top: 0px; right: 0; z-index: 2000;}
 	.top-nav a.nav-btn span.active { background: url(images/nav-arr-active.png) no-repeat center 20px; }
-	.top-nav ul li.first  { display: none; }
+	/* .top-nav ul li.first  { display: none; } */
 
 	.header-inner { width: 100%; padding: 0 10px; background: transparent; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 	.header-cnt { width: 100%; height: 200px; padding-top: 20px;  }
