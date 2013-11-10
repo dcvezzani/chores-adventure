@@ -55,6 +55,10 @@ end
 # http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h
 gem 'thin'
 
+# handle image hosting
+gem 'carrierwave'
+gem 'cloudinary'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

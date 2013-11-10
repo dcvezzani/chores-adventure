@@ -27,7 +27,15 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    aws_cf_signer (0.1.2)
     builder (3.1.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    cloudinary (1.0.65)
+      aws_cf_signer
+      rest-client
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -83,6 +91,8 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -126,6 +136,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
+  cloudinary
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
