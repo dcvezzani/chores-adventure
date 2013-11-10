@@ -23,7 +23,7 @@ module Chores
 
     config.serve_static_assets = true
 
-    config.assets.precompile += %w( application.css landing-page.css )
+    config.assets.precompile += %w( application.css application.js landing-page.css landing-page.js )
     
     config.assets.paths %W(#{config.root}/jquery-ui-1.10.3.custom/css/ui-lightness #{config.root}/custom #{config.root}/choco-templates/css #{config.root}/custom)
    
