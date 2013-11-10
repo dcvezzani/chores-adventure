@@ -36,10 +36,8 @@ which is heavily influenced by twitter-bootstrap
 restore bootstrap settings so that Rails specific views are using
 bootstrap correctly
 */
-.main-content{
-*, *:before, *:after {
+.main-content *, .main-content *:before, .main-content *:after {
   -moz-box-sizing: border-box;
-}
 }
 
 /* removes extra top space on non-landing page views */
