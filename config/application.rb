@@ -22,6 +22,8 @@ module Chores
     # config.i18n.default_locale = :de
 
     config.serve_static_assets = true
+
+    config.assets.precompile += %w( application.css landing-page.css )
     
     config.assets.paths %W(#{config.root}/jquery-ui-1.10.3.custom/css/ui-lightness #{config.root}/custom #{config.root}/choco-templates/css #{config.root}/custom)
    
