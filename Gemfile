@@ -50,7 +50,7 @@ end
 #
 # Using 'thin' because I'm too lazy to resolve problem with Webbrick
 # http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h
-gem 'thin'
+# gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
