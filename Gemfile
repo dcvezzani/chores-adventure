@@ -6,11 +6,9 @@ gem 'rails', '4.0.0'
 # heroku support
 gem 'rails_12factor', group: :production
 # heroku project name: salty-springs-3616
-#
-# group :production do
-#   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-#   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-# end
+
+# Fix the Rails 4 asset pipeline to generate non-digest along with digest assets
+gem "non-stupid-digest-assets"
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'

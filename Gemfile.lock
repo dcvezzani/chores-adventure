@@ -54,6 +54,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.2)
+    non-stupid-digest-assets (1.0.0)
     pg (0.17.0)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -128,6 +129,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  non-stupid-digest-assets
   pg
   rails (= 4.0.0)
   rails_12factor
