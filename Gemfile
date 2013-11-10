@@ -4,13 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # heroku support
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 # heroku project name: salty-springs-3616
 #
-group :production do
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+# group :production do
+#   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+#   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+# end
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -65,4 +65,4 @@ gem 'thin'
 #
 
 # ruby "2.0.0"
-ruby "1.9.3"
+# ruby "1.9.3"
