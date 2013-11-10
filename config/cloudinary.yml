@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hkia950fj
+  api_key: '889253235534168'
+  api_secret: jt82PwPNBPqjO_kflX6jh_sPz78
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hkia950fj
+  api_key: '889253235534168'
+  api_secret: jt82PwPNBPqjO_kflX6jh_sPz78
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hkia950fj
+  api_key: '889253235534168'
+  api_secret: jt82PwPNBPqjO_kflX6jh_sPz78
+  enhance_image_tag: true
+  static_image_support: false
