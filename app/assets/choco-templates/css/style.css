@@ -72,7 +72,7 @@ textarea { overflow: auto; }
 .main section.main-content { padding-bottom: 45px }
 .main section:last-of-type { background: transparent; }
 
-.main .testimonial { text-align: center; padding-right: 88px; padding-left: 88px; }
+.main .testimonial { text-align: center; padding: 25px 88px; }
 .main .testimonial p { padding-bottom: 10px; }
 .main .testimonial p strong { font-size: 28px; font-family: georgia, serif; position: relative; top: 10px; left: -5px; }
 
@@ -84,6 +84,7 @@ textarea { overflow: auto; }
 .main .content img.alignleft { margin-right: 22px; }
 .main .content .cnt { overflow: hidden; height: 100%; }
 .main section.blog { padding-bottom: 60px; }
+/* .main section.blog { padding: 2em 0 60px 0; } */
 
 .main .sidebar { width: 282px;  float: right; }
 .main .sidebar ul { list-style: none; list-style-position: outside; }
