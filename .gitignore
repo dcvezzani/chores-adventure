@@ -17,5 +17,5 @@ config/database.yml
 public/index.html
 doc-tutorials
 *.log
-# public/assets
+public/assets
 *.session
