@@ -1,3 +1,11 @@
+# ===== Mon Nov 11 11:18:20 PST 2013
+
+heroku addons:add cloudinary
+
+
+# ===== Archive
+
+
 git init
 git add .
 git commit -m "init"

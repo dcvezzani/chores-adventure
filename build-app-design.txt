@@ -1,3 +1,15 @@
+# ===== Mon Nov 11 11:18:38 PST 2013
+
+./bin/rails g scaffold Kudo title:string description:text recipient:references
+
+
+
+# ===== Sun Nov 10 14:53:19 PST 2013
+
+rails generate uploader Picture
+./bin/rails g migration add_picture_to_needs picture:text
+
+
 # ===== Wed Nov  6 21:32:07 PST 2013
 
 ./bin/rails g controller Welcome index
