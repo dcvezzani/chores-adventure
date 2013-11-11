@@ -1,0 +1,2 @@
+class KudoVote < Vote
+end

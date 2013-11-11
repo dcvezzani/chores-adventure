@@ -1,6 +1,12 @@
 # ===== Mon Nov 11 11:18:38 PST 2013
 
-./bin/rails g scaffold Kudo title:string description:text recipient:references
+./bin/rails g scaffold Kudo title:string description:text recipient:references picture:text
+rails generate uploader KudoPicture
+KudoPictureUploader
+
+./bin/rails g model KudoVote weight:integer author:references item:references type:string
+./bin/rails g model KudoNote content:text author:references item:references type:string
+
 
 
 

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @kudo.recipient %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @kudo.title %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <div class="picture-preview">
+  <%= image_tag @kudo.picture_url(:slide_show) %>
+  </div>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kudo.description %>
+</p>
+
+<%= link_to 'Edit', edit_kudo_path(@kudo) %> |
+<%= link_to 'Back', kudos_path %>

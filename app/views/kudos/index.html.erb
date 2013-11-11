@@ -1,0 +1,33 @@
+<h1>Listing kudos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Recipient</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kudos.each do |kudo| %>
+      <tr>
+        <td><%= kudo.title %></td>
+        <td><%= kudo.description %></td>
+        <td><%= kudo.recipient %></td>
+        <td><%= kudo.picture %></td>
+        <td><%= link_to 'Show', kudo %></td>
+        <td><%= link_to 'Edit', edit_kudo_path(kudo) %></td>
+        <td><%= link_to 'Destroy', kudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kudo', new_kudo_path %>
