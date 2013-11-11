@@ -1,25 +1,26 @@
 # encoding: utf-8
 
-class ImageUploader < CarrierWave::Uploader::Base
+# class NeedPictureUploader < PictureUploader
+class NeedPictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-
   include Cloudinary::CarrierWave
 
-  process :convert => 'png'
-  process :tags => ['post_picture']
+  #process :convert => 'png'
+  process :convert => 'jpeg'
+  process :tags => ['need_picture']
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # # Choose what kind of storage to use for this uploader:
+  # storage :file
+  # # storage :fog
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # # Override the directory where uploaded files will be stored.
+  # # This is a sensible default for uploaders that are meant to be mounted:
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -41,6 +42,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process :scale => [50, 50]
   # end
 
+  version :medium do
+    process :resize_to_fit => [500, 500]
+  end
+  
+  version :slide_show do
+    process :resize_to_fill => [497, 288]
+  end
+  
   version :standard do
     process :resize_to_fill => [100, 150, :north]
   end
@@ -61,7 +70,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  def public_id
-    return model.short_name
-  end  
+  # def public_id
+  #   return model.short_name
+  # end
 end
+
+

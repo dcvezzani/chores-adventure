@@ -63,8 +63,10 @@ gem 'cloudinary'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 #
+
+gem 'wirble'
 
 # ruby "2.0.0"
 ruby "1.9.3"

@@ -1,4 +1,4 @@
-<%= default_form_for(@need) do |f| %>
+<%= default_form_for(@need, html: {multipart: true}) do |f| %>
   <% if @need.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@need.errors.count, "error") %> prohibited this need from being saved:</h2>
@@ -14,6 +14,11 @@
   <div class="form-group field">
     <%= f.label :title %>
     <%= f.text_field :title %>
+  </div>
+  <div class="form-group field">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache %>
   </div>
   <div class="form-group field">
     <%= f.label :description %>

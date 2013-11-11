@@ -58,15 +58,9 @@
 						<div class="slider-holder">
 							<div class="flexslider">
 								<ul class="slides">
-									<li><img src="/assets/images/slide-img.png" alt="" /></li>
-								
-									<li><img src="/assets/images/slide-img.png" alt="" /></li>
-
-									<li><img src="/assets/images/slide-img.png" alt="" /></li>
-
-									<li><img src="/assets/images/slide-img.png" alt="" /></li>
-
-									<li><img src="/assets/images/slide-img.png" alt="" /></li>
+                  <% Need.where{picture != nil}.each do |need| %>
+									<li><%= image_tag need.picture_url(:slide_show) %></li>
+                  <% end %>
 								</ul>
 							</div>
 						</div>

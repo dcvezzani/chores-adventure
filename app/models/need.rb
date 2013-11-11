@@ -4,6 +4,7 @@ class Need < ActiveRecord::Base
   has_many :chore_needs
   has_many :chores, through: :chore_needs
 
+  mount_uploader :picture, NeedPictureUploader
 
   def vote(direction, author)
     weight = (direction == :up) ? 1 : -1
