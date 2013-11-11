@@ -264,6 +264,8 @@ html, body { height: 100%; }
 	.footer-bottom .footer-nav ul li { padding: 0 2px 0 4px; float: none; display: inline; background-position: 0 2px;  }
 	.footer-bottom  p.copy { float: none; display: block; text-align: center;  clear: both; font-size: 10px;  }
 	.footer-bottom .shell { width: 100%; }
+
+  .picture-preview img{ width: 100%; }
 }
 
 @media only screen and ( max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi)  { 

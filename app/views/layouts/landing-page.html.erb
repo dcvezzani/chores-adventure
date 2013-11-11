@@ -58,7 +58,7 @@
 						<div class="slider-holder">
 							<div class="flexslider">
 								<ul class="slides">
-                  <% Need.where{picture != nil}.each do |need| %>
+                  <% @latest_needs.each do |need| %>
 									<li><%= image_tag need.picture_url(:slide_show) %></li>
                   <% end %>
 								</ul>
