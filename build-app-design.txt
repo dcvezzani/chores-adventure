@@ -7,6 +7,15 @@ KudoPictureUploader
 ./bin/rails g model KudoVote weight:integer author:references item:references type:string
 ./bin/rails g model KudoNote content:text author:references item:references type:string
 
+Parent.create!(id: 1, name: "Dad", birthdate: "1972-09-19", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Parent.create!(id: 2, name: "Mom", birthdate: "1977-02-28", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+
+Child.create!( id: 3, name: "Tim", birthdate: "1997-06-16", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Child.create!( id: 4, name: "Jordan", birthdate: "1998-11-13", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Child.create!( id: 5, name: "Adelle", birthdate: "2001-01-04", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Child.create!( id: 6, name: "Matthew", birthdate: "2003-11-21", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Child.create!( id: 7, name: "Rebekah", birthdate: "2006-04-13", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
+Child.create!( id: 8, name: "Cassandra", birthdate: "2009-06-25", created_at: "2013-11-03 13:47:05", updated_at: "2013-11-03 13:47:05")
 
 
 
