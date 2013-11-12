@@ -82,7 +82,7 @@
 						<!-- testimonial -->
 						<section class="testimonial">
               <h2><%= say_thankyou(@testimonial) %></h2>
-							<p><strong>“</strong><%= (@testimonial.description.blank?) ? "We sure appreciate your help!" : @testimonial.description %></span></p>
+							<p><strong>“</strong><%= testimonial_description(@testimonial) %></span></p>
               <%= link_to @testimonial do %>
               <%= image_tag @testimonial.picture_url(:thumbnail) %>
               <% end %>
