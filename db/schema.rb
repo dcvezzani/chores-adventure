@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103051306) do
+ActiveRecord::Schema.define(version: 20131111222609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,33 +26,36 @@ ActiveRecord::Schema.define(version: 20131103051306) do
   add_index "assignment_family_members", ["assignment_id"], name: "index_assignment_family_members_on_assignment_id", using: :btree
   add_index "assignment_family_members", ["family_member_id"], name: "index_assignment_family_members_on_family_member_id", using: :btree
 
-  create_table "assignments", force: true do |t|
-    t.integer  "chore_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "assignments", ["chore_id"], name: "index_assignments_on_chore_id", using: :btree
-
-  create_table "chore_needs", force: true do |t|
-    t.integer  "chore_id"
+  create_table "assignment_needs", force: true do |t|
+    t.integer  "assignment_id"
     t.integer  "need_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "chore_needs", ["chore_id"], name: "index_chore_needs_on_chore_id", using: :btree
-  add_index "chore_needs", ["need_id"], name: "index_chore_needs_on_need_id", using: :btree
+  add_index "assignment_needs", ["assignment_id"], name: "index_assignment_needs_on_assignment_id", using: :btree
+  add_index "assignment_needs", ["need_id"], name: "index_assignment_needs_on_need_id", using: :btree
 
-  create_table "chore_rewards", force: true do |t|
-    t.integer  "chore_id"
+  create_table "assignment_rewards", force: true do |t|
+    t.integer  "assignment_id"
     t.integer  "reward_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "chore_rewards", ["chore_id"], name: "index_chore_rewards_on_chore_id", using: :btree
-  add_index "chore_rewards", ["reward_id"], name: "index_chore_rewards_on_reward_id", using: :btree
+  add_index "assignment_rewards", ["assignment_id"], name: "index_assignment_rewards_on_assignment_id", using: :btree
+  add_index "assignment_rewards", ["reward_id"], name: "index_assignment_rewards_on_reward_id", using: :btree
+
+  create_table "assignments", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "assigned_at"
+    t.datetime "completed_at"
+    t.datetime "due_at"
+    t.integer  "owner_id"
+  end
+
+  add_index "assignments", ["owner_id"], name: "index_assignments_on_owner_id", using: :btree
 
   create_table "chores", force: true do |t|
     t.datetime "assigned_at"
@@ -67,13 +70,26 @@ ActiveRecord::Schema.define(version: 20131103051306) do
     t.date     "birthdate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
   end
+
+  create_table "kudos", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "recipient_id"
+    t.text     "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "kudos", ["recipient_id"], name: "index_kudos_on_recipient_id", using: :btree
 
   create_table "needs", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "picture"
   end
 
   create_table "notes", force: true do |t|

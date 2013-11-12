@@ -1,4 +1,4 @@
-<%= default_form_for(@need, html: {multipart: true}) do |f| %>
+<%= default_form_for(@kudo, html: {multipart: true}) do |f| %>
   <% if @kudo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@kudo.errors.count, "error") %> prohibited this kudo from being saved:</h2>
@@ -12,20 +12,27 @@
   <% end %>
 
   <div class="form-group field">
-    <%= f.label :recipient %><br>
-    <%= f.text_field :recipient %>
+    <%= f.label :recipient_id %>
+    <%= f.text_field :recipient_id %>
   </div>
   <div class="form-group field">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="form-group field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
-    <%= f.hidden_field :picture_cache %>
+    <%= f.label :picture %>
+    <%= f.file_field :picture, model: @kudo, uploader_label: :picture %>
+    <%# <%= f.hidden_field :picture_cache %>
+
+    <%# <% if @kudo.picture.file.exists? %>
+    <%# <div class="current-preview">
+    <%#   <%= image_tag @kudo.picture_url(:thumbnail) %>
+    <%# </div>
+    <%# <% end %>
+
   </div>
   <div class="form-group field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div class="form-group actions">
