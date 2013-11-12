@@ -22,14 +22,6 @@
   <div class="form-group field">
     <%= f.label :picture %>
     <%= f.file_field :picture, model: @kudo, uploader_label: :picture %>
-    <%# <%= f.hidden_field :picture_cache %>
-
-    <%# <% if @kudo.picture.file.exists? %>
-    <%# <div class="current-preview">
-    <%#   <%= image_tag @kudo.picture_url(:thumbnail) %>
-    <%# </div>
-    <%# <% end %>
-
   </div>
   <div class="form-group field">
     <%= f.label :description %>

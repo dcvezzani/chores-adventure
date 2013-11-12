@@ -20,13 +20,14 @@ class DefaultFormBuilder < ActionView::Helpers::FormBuilder
     options.merge!({class: "form-control", placeholder: method.to_s.humanize})
     model = options.delete(:model)
     uploader_label = options.delete(:uploader_label)
+    uploader = (uploader_label) ? model.send(uploader_label) : nil
 
     @template.content_tag(:div, class: "col-sm-10") do
       super(method, options) + 
       hidden_field("#{uploader_label}_cache".to_sym) +
       
       #image_tag model.picture_url(:thumbnail) if @kudo.picture.file.exists?
-      if model.send(uploader_label).file.exists?
+      if uploader and uploader.file and uploader.file.exists?
         @template.content_tag(:div, class: "current-preview") do
           @template.image_tag(model.send("#{uploader_label}_url", :thumbnail)) + 
           @template.content_tag(:span){"(current picture)"}
