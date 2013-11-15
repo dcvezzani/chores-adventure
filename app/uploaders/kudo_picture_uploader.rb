@@ -45,6 +45,10 @@ class KudoPictureUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [500, 500]
   end
   
+  version :phone do
+    process :resize_to_fill => [280, 162]
+  end
+
   version :slide_show do
     process :resize_to_fill => [497, 288]
   end
