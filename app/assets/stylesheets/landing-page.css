@@ -41,7 +41,7 @@ apparently, this is already being done correctly in the non-
 landing page view templates
 */
 .container section{
-  padding: 0 15px;
+  padding: 0 20px;
 }
 @media only screen and ( min-width: 980px) { 
   .container section{

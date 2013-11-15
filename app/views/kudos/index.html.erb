@@ -18,8 +18,8 @@
       <tr>
         <td><%= kudo.title %></td>
         <td><%= kudo.description %></td>
-        <td><%= kudo.recipient %></td>
-        <td><%= kudo.picture %></td>
+        <td><%= kudo.recipient.name %></td>
+        <td><%= image_tag kudo.picture_url(:thumbnail) %></td>
         <td><%= link_to 'Show', kudo %></td>
         <td><%= link_to 'Edit', edit_kudo_path(kudo) %></td>
         <td><%= link_to 'Destroy', kudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
